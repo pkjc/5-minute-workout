@@ -4,7 +4,7 @@
     "name": "5 Minute Workout",
     "scope": "/",
     "display": "standalone",
-    "start_url": "https://5minworkout.netlify.com/",
+    "start_url": "/index.html",
     "short_name": "5MinWorkout",
     "theme_color": "transparent",
     "description": "Five random bodyweight exercises each time, One minute each exercise, done in five minutes!",
