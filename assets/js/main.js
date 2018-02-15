@@ -33,11 +33,8 @@ function attachEventHandlers() {
 }
 
 function populateExercisesOnScreen(dataFromJsonFile) {
-    console.log('------> populateExercisesOnScreen');
     var randExArr = prepArrayOfRandomEx(dataFromJsonFile);
-    console.log('------> randExArr ' + randExArr);
     $.each(randExArr, function(index, val) {
-        console.log('------> each');
         var cache = $('#exercise'+index+'Time');
         $('#exercise'+index+'Time').parent().text((index) + ". " + val).append(cache);
     });
@@ -88,7 +85,6 @@ function startExercise(exCount) {
         });
         animateProgressBar(exCount);
     } else {
-        alert("Workout complete!");
         $('#fmw-timer').timer('remove');
         $('#exercise').timer('remove');
         globalVars.observer.disconnect();
