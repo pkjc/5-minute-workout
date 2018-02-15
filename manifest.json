@@ -3,7 +3,7 @@
     "lang": "en",
     "name": "5 Minute Workout",
     "scope": "/",
-    "display": "browser",
+    "display": "standalone",
     "start_url": "https://5minworkout.netlify.com/",
     "short_name": "5MinWorkout",
     "theme_color": "transparent",

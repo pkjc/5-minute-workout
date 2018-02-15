@@ -3,9 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=2.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="theme-color" content="#9c27b0"/>
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="./Images/apple-icon.png">
     <link rel="icon" href="./Images/favicon.png">
@@ -48,19 +47,8 @@
     <div class="container">
         <div class="card my-3" style="">
             <div class="card-body py-2">
-                <h4 class="card-title mt-0 text-center" id="fmw-timer">05:00</h4>
+                <h4 class="card-title mt-0 text-center" id="fmw-timer">You're Offline!</h4>
             </div>
-        </div>
-        <div class="card my-3" style="" id="exTemplate">
-            <!--Placeholder-->
-        </div>
-        <div class="fmw-actions text-center">
-            <button class="btn btn-primary" id="playWorkout">
-                <i class="material-icons">play_arrow</i>
-            </button>
-            <button class="btn btn-primary" id="stopWorkout">
-                <i class="material-icons">stop</i>
-            </button>
         </div>
     </div>
 
@@ -92,13 +80,13 @@
     </div>
 
     <!--   Core JS Files   -->
-    <script src="./assets/js/core/jquery.min.js"></script>
+    <!-- <script src="./assets/js/core/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timer.jquery/0.7.0/timer.jquery.js"></script>
     <script src="./assets/js/core/popper.min.js"></script>
     <script src="./assets/js/bootstrap-material-design.js"></script>
     <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
-    <script src="./assets/js/material-kit.js?v=2.0.1"></script>
-    <script src="./assets/js/main.js"></script>
-    <script src="./sw-register.js"></script>
+    <!-- <script src="./assets/js/material-kit.js?v=2.0.1"></script>
+    <script src="./assets/js/main.js"></script> -->
+    <script src="./sw-register.js" defer></script>
 </body>
 </html>
