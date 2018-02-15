@@ -1,0 +1,102 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "5 Minute Workout",
+    "scope": "/",
+    "display": "browser",
+    "start_url": "https://5minworkout.netlify.com/",
+    "short_name": "5MinWorkout",
+    "theme_color": "transparent",
+    "description": "Five random bodyweight exercises each time, One minute each exercise, done in five minutes!",
+    "orientation": "any",
+    "background_color": "transparent",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "/images/a6162759-ad93-268c-7b31-648302833963.webPlatform.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/bb1cc397-c65f-62c7-d2a3-87700982b350.webPlatform.png",
+            "sizes": "1240x600",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/b281a6c5-b73f-ae73-37a4-0193b0d50513.webPlatform.png",
+            "sizes": "300x300",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/178ed80f-429b-cdde-35e1-b42dbd7a985e.webPlatform.png",
+            "sizes": "88x88",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/c13f0059-f694-9cab-b6f4-2a2c272d3974.webPlatform.png",
+            "sizes": "24x24",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/37cd0e81-1114-fdbe-9bfb-34678f5623e4.webPlatform.png",
+            "sizes": "50x50",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/cbe95360-21ba-d788-3421-ba6c5d5ae2e3.webPlatform.png",
+            "sizes": "620x300",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/2087a4d1-4007-6110-b876-0172dfc30857.webPlatform.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/392a5aa3-65cb-72f5-b239-8327c6ce1c86.webPlatform.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/2f07a69c-482a-8eec-8a5a-3b716b83b880.webPlatform.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/c497e651-07b6-de6f-bb34-8146dcfe31bb.webPlatform.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/e9eab802-a9df-0947-fc0b-aa5f3386b1f8.webPlatform.png",
+            "sizes": "36x36",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/319866e4-4135-3fb9-d5f9-a748c409935b.webPlatform.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/0d437f7a-0bec-1efc-34d8-73ae198295ee.webPlatform.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/6d0e1003-449c-84e0-7d38-9abc0e4071f3.webPlatform.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/d1a635fb-3a8e-17f8-13f9-a698279c330b.webPlatform.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/f90659e4-f8f2-0435-846a-e98935e8cfa7.webPlatform.png",
+            "sizes": "76x76",
+            "type": "image/png"
+        }
+    ]
+}
