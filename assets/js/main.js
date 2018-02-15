@@ -18,6 +18,7 @@ function setup() {
     $("#exTemplate").load("exercisesPartial.html");
     //Bring data from given source URL
     $.getJSON(globalVars.dataSrcUrl, {}).done(function(dataFromJsonFile) {
+        console.log('------> AJAX req.');
         populateExercisesOnScreen(dataFromJsonFile);
     });
     //Remove :focus from clicked button
@@ -32,8 +33,11 @@ function attachEventHandlers() {
 }
 
 function populateExercisesOnScreen(dataFromJsonFile) {
+    console.log('------> populateExercisesOnScreen');
     var randExArr = prepArrayOfRandomEx(dataFromJsonFile);
+    console.log('------> randExArr ' + randExArr);
     $.each(randExArr, function(index, val) {
+        console.log('------> each');
         var cache = $('#exercise'+index+'Time');
         $('#exercise'+index+'Time').parent().text((index) + ". " + val).append(cache);
     });
