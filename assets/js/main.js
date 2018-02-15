@@ -33,11 +33,9 @@ function attachEventHandlers() {
 
 function populateExercisesOnScreen(dataFromJsonFile) {
     var randExArr = prepArrayOfRandomEx(dataFromJsonFile);
-    var elChildNum = 1;
     $.each(randExArr, function(index, val) {
-        var cache = $('.list-group-item:nth-child(' + elChildNum + ')').children();
-        $('.list-group-item:nth-child(' + elChildNum + ')').text((++index) + ". " + val).append(cache);
-        elChildNum += 2;
+        var cache = $('#exercise'+index+'Time');
+        $('#exercise'+index+'Time').parent().text((index) + ". " + val).append(cache);
     });
 }
 
