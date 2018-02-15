@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="./assets/img/apple-icon.png">
+    <link rel="icon" href="./assets/img/favicon.png">
+    <title>
+        5 Minute Workout App
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/css/material-kit.min.css">
+    <!-- Documentation extras -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    </head>
+
+    <body class="index-page ">
+        <nav class="navbar navbar-expand-lg bg-primary">
+            <div class="container">
+                <div class="navbar-translate">
+                    <a class="navbar-brand mx-auto" href="index.html">5 Minute Workout</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation" style="">
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#pablo" class="nav-link" data-toggle="modal" data-target="#aboutModal">
+                                <i class="material-icons">help_outline</i>
+                                About
+                            </a>
+                        </li>
+                        <hr>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="card my-3" style="">
+                <div class="card-body py-2">
+                    <h4 class="card-title mt-0 text-center" id="fmw-timer">05:00</h4>
+                </div>
+            </div>
+            <div class="card my-3" style="" id="exTemplate">
+                <!--Placeholder-->
+            </div>
+            <div class="fmw-actions text-center">
+                <button class="btn btn-primary" id="playWorkout">
+                    <i class="material-icons">play_arrow</i>
+                </button>
+                <button class="btn btn-primary" id="stopWorkout">
+                    <i class="material-icons">stop</i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="aboutModalLabel" style="font-weight:bold">About</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            The five minute workout app gives you five simple bodyweight exerices to do in five minutes
+                            (one minute per exercise).
+                        </p>
+                        <small>
+                            Developed by <a href="http://pankaj.co">Pankaj C.</a><br>
+                            Send your feedback to: <a href="mailto:pankajc@outlook.com">pankajc@outlook.com</a>
+                        </small>
+                    </div>
+                    <div class="modal-footer mr-auto">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!--   Core JS Files   -->
+<script src="./assets/js/core/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/timer.jquery/0.7.0/timer.jquery.js"></script>
+<script src="./assets/js/core/popper.min.js"></script>
+<script src="./assets/js/bootstrap-material-design.js"></script>
+<!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
+<script src="./assets/js/material-kit.js?v=2.0.1"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+<script src="./assets/js/main1.js" defer></script>
+<!-- <script src="./assets/js/main.js"></script> -->
+<script>
+</script>
+</body>
+
+</html>

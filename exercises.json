@@ -1,0 +1,17 @@
+{
+    "fullBody": ["Jumping jacks", "Mountain climbers", "High knees jogging",
+        "High knees running", "Sun salutations", "Spot jogging", "Arm rotation"
+    ],
+    "upper": ["Pushups", "Wide pushups", "Tricep dips", "Bird dog",
+        "Knee pushups", "Bear crawl"
+    ],
+    "lower": ["Squats", "Lunges", "Step up on chair", "Bridge up",
+        "Side lunges", "Wall sit"
+    ],
+    "core": ["Crunches", "Reverse crunches", "Bicycles",
+        "V-ups", "Straight leg toe touch", "Sit ups"
+    ],
+    "planks": ["Straight arm plank", "Regular plank",
+        "Spriderman plank", "V-up hold", "Bridge hold"
+    ]
+}
