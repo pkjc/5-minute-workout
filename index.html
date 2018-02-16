@@ -55,12 +55,6 @@
                             About
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#pablo" class="nav-link" data-toggle="modal" data-target="#aboutModal">
-                            <i class="material-icons">help_outline</i>
-                            How it Works
-                        </a>
-                    </li>
                     <hr>
                 </ul>
             </div>
@@ -68,7 +62,7 @@
     </nav>
     <div class="container">
         <div class="card my-3" style="">
-            <div class="card-body row py-3 px-2 align-items-center h-100">
+            <div class="card-body row py-5 px-2 align-items-center h-100">
                 <div class="col-6" style="border-right: 1px solid darkorchid;">
                     <small style="font-size:1rem;text-align: center;display: block;">Click 'Play' to start workout</small>
                     <h4 class="card-title mt-0" id="current-ex"> </h4>
@@ -102,30 +96,39 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <ul>
+                        <li>
+                            Get five random bodyweight exercises each time you open the app.
+                        </li>
+                        <li>
+                            Do each exercise for one minute. Rest as and when you need.
+                        </li>
+                    </ul>
+                    <hr>
                     <p>
-                        The five minute workout app gives you five simple bodyweight exerices to do in five minutes
-                        (one minute per exercise).
+                        Please share your feedback/bug reports/feature requests using
+                        <strong><a href="https://goo.gl/forms/MvQjUPywYICSHJxl2" target="_blank" style="border-bottom:2px solid">this Google Form.</a></strong>
                     </p>
-                    <small>
-                        Developed by <a href="http://pankaj.co">Pankaj C.</a><br>
-                        Send your feedback to: <a href="mailto:pankajc@outlook.com">pankajc@outlook.com</a>
+                    <hr>
+                    <small class="pull-right">
+                        <p>Developed by <a href="http://pankaj.co">Pankaj C.</a></p>
                     </small>
                 </div>
-                <div class="modal-footer mr-auto">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
+                <!-- <div class="modal-footer mr-auto">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div> -->
         </div>
     </div>
+</div>
 
-    <!--   Core JS Files   -->
-    <script src="./assets/js/core/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timer.jquery/0.7.0/timer.jquery.js"></script>
-    <script src="./assets/js/core/popper.min.js"></script>
-    <script src="./assets/js/bootstrap-material-design.js"></script>
-    <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
-    <script src="./assets/js/material-kit.js?v=2.0.1"></script>
-    <script src="./assets/js/main.js"></script>
-    <script src="./sw-register.js"></script>
+<!--   Core JS Files   -->
+<script src="./assets/js/core/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/timer.jquery/0.7.0/timer.jquery.js"></script>
+<script src="./assets/js/core/popper.min.js"></script>
+<script src="./assets/js/bootstrap-material-design.js"></script>
+<!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
+<script src="./assets/js/material-kit.js?v=2.0.1"></script>
+<script src="./assets/js/main.js"></script>
+<script src="./sw-register.js"></script>
 </body>
 </html>
