@@ -13,7 +13,7 @@ $(function(){
         var voices = window.speechSynthesis.getVoices();
         globalVars.utterance.voice = voices[17];
         globalVars.utterance.rate = 1;
-        globalVars.utterance.pitch = 1.2;
+        globalVars.utterance.pitch = 1.23;
         globalVars.utterance.text = text;
         speechSynthesis.speak(globalVars.utterance);
     }else{
