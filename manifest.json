@@ -5,12 +5,17 @@
     "scope": "/",
     "display": "standalone",
     "start_url": "/index.html",
-    "short_name": "5MinWorkout",
+    "short_name": "5MW",
     "theme_color": "#9c27b0",
     "description": "Five random bodyweight exercises each time, One minute each exercise, done in five minutes!",
     "orientation": "portrait",
     "background_color": "#FAFAFA",
-    "related_applications": [],
+    "related_applications": [
+        {
+            "platform": "play",
+            "id": "com.google.samples.apps.iosched"
+        }
+    ],
     "prefer_related_applications": false,
     "icons": [
         {

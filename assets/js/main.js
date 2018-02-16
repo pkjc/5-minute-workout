@@ -7,23 +7,17 @@ $(function(){
         utterance: ""
     };
 
-
     if ('speechSynthesis' in window){
-        var text = "Welcome, to the five minute workout, app!";
+        var text = "Welcome, to the five minute workout, app. Click 'Play' to start the workout";
         globalVars.utterance = new SpeechSynthesisUtterance();
         var voices = window.speechSynthesis.getVoices();
-        console.log("VOICE****************** " + voices[17]);
-        globalVars.utterance.voice = voices[10];
-        globalVars.utterance.rate = 1.1;
+        globalVars.utterance.voice = voices[17];
+        globalVars.utterance.rate = 1;
         globalVars.utterance.pitch = 1.2;
         globalVars.utterance.text = text;
-
-        globalVars.utterance.onend = function(e) {
-            console.log('Finished in ' + event.elapsedTime + ' seconds.');
-        };
         speechSynthesis.speak(globalVars.utterance);
     }else{
-        alert("Speech feature not supported. Please use the latest version of Opera, Google Chrome or Mozilla Firefox");
+        alert("Speech feature not supported. Please use the latest version of Google Chrome.");
     }
 
 
@@ -125,7 +119,9 @@ $(function(){
 
         if (exCount <= 5) {
             globalVars.utterance.text = "Do the exercise, " + currExName;
-            speechSynthesis.speak(globalVars.utterance);
+            setTimeout(function(){
+                speechSynthesis.speak(globalVars.utterance);
+            },1000);
             $('#exercise' + exCount + 'Time').timer({
                 duration: '1m',
                 format: '%M:%S',
@@ -137,7 +133,7 @@ $(function(){
             });
             animateProgressBar(exCount);
         } else {
-            globalVars.utterance.text = "Congratulations! Your workout is complete! YOU Rock!";
+            globalVars.utterance.text = "Congratulations! Your workout is complete! YOU, Are, Awesome!";
             speechSynthesis.speak(globalVars.utterance);
             $('#fmw-timer').timer('remove');
             $('#exercise').timer('remove');
