@@ -18,7 +18,6 @@ function setup() {
     $("#exTemplate").load("exercisesPartial.html");
     //Bring data from given source URL
     $.getJSON(globalVars.dataSrcUrl, {}).done(function(dataFromJsonFile) {
-        console.log('------> AJAX req.');
         populateExercisesOnScreen(dataFromJsonFile);
     });
     //Remove :focus from clicked button
@@ -42,7 +41,7 @@ function populateExercisesOnScreen(dataFromJsonFile) {
 
 function prepArrayOfRandomEx(dataFromJsonFile){
     var exList = dataFromJsonFile,
-        exIndex = 0,
+        exIndex = 1,
         exArr = [];
 
     for (var ex in exList) {
@@ -72,7 +71,7 @@ function startWorkout() {
 }
 
 function startExercise(exCount) {
-    console.log(exCount);
+    populateCurrentExercise(exCount);
     if (exCount <= 5) {
         $('#exercise' + exCount + 'Time').timer({
             duration: '1m',
@@ -87,8 +86,15 @@ function startExercise(exCount) {
     } else {
         $('#fmw-timer').timer('remove');
         $('#exercise').timer('remove');
+        $('#playWorkout').find('.material-icons').html("play_arrow");
         globalVars.observer.disconnect();
     }
+}
+
+function populateCurrentExercise(exCount){
+    var x = $('#exercise' + exCount + 'Time').parent().text();
+    var currExName = x.slice(2,x.indexOf('0'));
+    $('#current-ex').text(currExName);
 }
 
 function animateProgressBar(exCount) {

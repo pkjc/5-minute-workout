@@ -30,67 +30,69 @@ p {
     font-size: 16px;
 }
 
-.list-group-item {}
+#fmw-timer {
+    font-weight: normal;
+    font-size: 2.6rem;
+    text-align: center;
+}
+.card-title{
+    font-size: 1.4rem;
+    line-height: 1.1;
+    text-align: center;
+}
+.fmw-actions {
+    margin-bottom: 1em;
+}
 
-    #fmw-timer {
-        font-weight: normal;
-        font-size: 4.5rem;
-        text-align: center;
-    }
+footer {
+    padding: 0.25rem 0;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    /* Height of the footer */
+}
 
-    .fmw-actions {
-        margin-bottom: 1em;
-    }
+.btn .material-icons,
+.btn:not(.btn-just-icon):not(.btn-fab) .fa {
+    font-size: 2rem;
+}
 
-    footer {
-        padding: 0.25rem 0;
-        text-align: center;
-        bottom: 0;
-        width: 100%;
-        background: #fff;
-        bottom: 0;
-        width: 100%;
-        height: 60px;
-        /* Height of the footer */
-    }
+small,
+.small {
+    font-size: 90%;
+}
 
-    .btn .material-icons,
-    .btn:not(.btn-just-icon):not(.btn-fab) .fa {
-        font-size: 2rem;
-    }
+#fmw-exercises li {
+    font-size: 1.2em;
+}
 
-    small,
-    .small {
-        font-size: 90%;
-    }
+#fmw-exercises .progress {
+    margin-bottom: 0px;
+}
 
-    #fmw-exercises li {
-        font-size: 1.2em;
-    }
+#fmw-exercises {
+    padding: 0;
+}
 
-    #fmw-exercises .progress {
-        margin-bottom: 0px;
-    }
+.navbar {
+    border-radius: 0;
+}
 
-    #fmw-exercises {
-        padding: 0;
-    }
+.navbar .navbar-brand {
+    font-size: 1.25em;
+}
 
-    .navbar {
-        border-radius: 0;
-    }
+.navbar .navbar-nav .nav-item .nav-link {
+    font-size: 15px;
+}
 
-    .navbar .navbar-brand {
-        font-size: 1.25em;
-    }
-
-    .navbar .navbar-nav .nav-item .nav-link {
-        font-size: 15px;
-    }
-
-    .navbar .navbar-nav .nav-item.active .nav-link,
-    .navbar .navbar-nav .nav-item.active .nav-link:hover,
-    .navbar .navbar-nav .nav-item.active .nav-link:focus {
-        color: #3C4858;
-        font-weight: bold;
-    }
+.navbar .navbar-nav .nav-item.active .nav-link,
+.navbar .navbar-nav .nav-item.active .nav-link:hover,
+.navbar .navbar-nav .nav-item.active .nav-link:focus {
+    color: #3C4858;
+    font-weight: bold;
+}
