@@ -61,6 +61,7 @@ function calcElapsedTime(i){
 function exerciseTimer(currExercise){
     console.log('exerciseTimer : ' + currExercise);
     var progressBarPercent = 0;
+    
     function animateProgressBar(currExercise) {
         console.log('animateProgressBar : ' + currExercise);
         progressBarPercent++;

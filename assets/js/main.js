@@ -1,8 +1,29 @@
+
+$(function(){
+    if ('speechSynthesis' in window){
+        var text = "Welcome, to the five minute workout, app!";
+        var msg = new SpeechSynthesisUtterance();
+        var voices = window.speechSynthesis.getVoices();
+        console.log("VOICE****************** " + voices[17]);
+        msg.voice = voices[10];
+        msg.rate = 1;
+        msg.pitch = 1.2;
+        msg.text = text;
+
+        msg.onend = function(e) {
+            console.log('Finished in ' + event.elapsedTime + ' seconds.');
+        };
+        speechSynthesis.speak(msg);
+    }else{
+        alert("nope");
+    }
+});
 //Global object to create variables available only throughout the code but not globally
 const globalVars = {
     audio: new Audio('./assets/audio/done.mp3'),
     observer: "",
-    dataSrcUrl: "exercises.json"
+    dataSrcUrl: "exercises.json",
+    intervalCount:1
 };
 
 //Function Calls
@@ -41,8 +62,8 @@ function populateExercisesOnScreen(dataFromJsonFile) {
 
 function prepArrayOfRandomEx(dataFromJsonFile){
     var exList = dataFromJsonFile,
-        exIndex = 1,
-        exArr = [];
+    exIndex = 1,
+    exArr = [];
 
     for (var ex in exList) {
         if (exList.hasOwnProperty(ex)) {
@@ -59,7 +80,7 @@ function getRandomEx(exName, exList, exIndex) {
 }
 
 function startWorkout() {
-    globalVars.audio.play();
+    //globalVars.audio.play();
     $('#fmw-timer').timer({
         countdown: true,
         duration: '5m',
@@ -71,7 +92,36 @@ function startWorkout() {
 }
 
 function startExercise(exCount) {
-    populateCurrentExercise(exCount);
+    var currExName = populateCurrentExercise(exCount);
+    // var utterance = new SpeechSynthesisUtterance();
+    // var voices = window.speechSynthesis.getVoices();
+    // console.log(window.speechSynthesis);
+    // $.each(voices, function(index, val) {
+    //     console.log(index + val);
+    // });
+    //window.speechSynthesis.speak(utterance);
+
+    // var voices = window.speechSynthesis.getVoices();
+    // var idx = 0;
+    // function playVoice() {
+    //     var say = 'Hi! My name is ' + voices[idx].name;
+    //     console.log('[' + idx + ']' + say);
+    //     var msg = new window.SpeechSynthesisUtterance(say);
+    //     msg.voice = voices[idx];
+    //     window.speechSynthesis.speak(msg);
+    //     var notFound = true;
+    //     idx++;
+    //     while ((notFound) && (idx < voices.length)) {
+    //         if (voices[idx].lang === 'en-US') {
+    //             setTimeout(function() { playVoice(); }, 2000);
+    //             notFound = false;
+    //         } else {
+    //             idx++;
+    //         }
+    //     }
+    // }
+    // playVoice();
+
     if (exCount <= 5) {
         $('#exercise' + exCount + 'Time').timer({
             duration: '1m',
@@ -87,6 +137,7 @@ function startExercise(exCount) {
         $('#fmw-timer').timer('remove');
         $('#exercise').timer('remove');
         $('#playWorkout').find('.material-icons').html("play_arrow");
+        $('#current-ex').prev().text('Awesome! The workout is complete.');
         globalVars.observer.disconnect();
     }
 }
@@ -95,9 +146,27 @@ function populateCurrentExercise(exCount){
     var x = $('#exercise' + exCount + 'Time').parent().text();
     var currExName = x.slice(2,x.indexOf('0'));
     $('#current-ex').text(currExName);
+    $('#current-ex').prev().text('Now');
+    return currExName;
 }
 
 function animateProgressBar(exCount) {
+    globalVars.intervalCount = 1;
+
+    var pollInterval = setInterval(function(){
+        if(globalVars.intervalCount<60 && $('#exercise' + exCount + 'Time').data('seconds') != null){
+            if($('#exercise' + exCount + 'Time').data('state') == 'paused'){
+                return;
+            }
+            globalVars.intervalCount++;
+            console.log("=======***======== " + $('#exercise' + exCount + 'Time').data('seconds'));
+            $('#exercise' + exCount).css('width', (globalVars.intervalCount * 100 / 60) + '%');
+        }else{
+            console.log("in Clear");
+            clearInterval(pollInterval);
+        }
+    },1000);
+
     // Select the node that will be observed for mutations
     var targetNode = document.getElementById('exercise' + exCount + 'Time');
     // Options for the observer (which mutations to observe)
@@ -111,7 +180,7 @@ function animateProgressBar(exCount) {
             if (mutation.type == 'childList') {
                 for (var i = 0; i < mutation.addedNodes.length; i++) {
                     progBarPerc++;
-                    $('#exercise' + exCount).css('width', (progBarPerc * 100 / 120) + '%')
+                    //$('#exercise' + exCount).css('width', (progBarPerc * 100 / 120) + '%');
                 }
             }
         }
@@ -152,15 +221,13 @@ function pauseOrResumeExTimers(state, action){
 function stopBtnHandler() {
     //$("#fmw-timer").timer('reset');
     //Stop the workout timer
-    if ($('#fmw-timer').data() && $('#fmw-timer').data('state') == 'running'){
-        $("#fmw-timer").timer('remove');
-    }
+    $("#fmw-timer").timer('reset');
+    $("#fmw-timer").timer('remove');
     //Stop exercise timers
     for (var i = 0; i <= 5; i++) {
-        if ($('#exercise' + i + 'Time').data() && $('#exercise' + i + 'Time').data('state')=='running') {
-            //$('#exercise' + i + 'Time').timer('reset');
-            $('#exercise' + i + 'Time').timer('remove');
-        }
+        $('#exercise' + i + 'Time').timer('reset');
+        $('#exercise' + i + 'Time').timer('remove');
+        $('#exercise' + i).css('width','0%');
     }
     globalVars.observer.disconnect();
     $('#playWorkout').find('.material-icons').html("play_arrow");
