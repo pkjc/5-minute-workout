@@ -1,40 +1,46 @@
-$(function(){
+$(function() {
+    var audio = new Audio('./assets/audio/done.mp3');
     //Global object to create variables available only throughout the code but not globally
     const globalVars = {
-        audio: new Audio('./assets/audio/done.mp3'),
         observer: "",
-        dataSrcUrl: "exercises.json",
+        dataSrcUrl: "exercises1.json",
         utterance: ""
     };
 
-    if ('speechSynthesis' in window){
-        var text = "Welcome, to the five minute workout, app. Click 'Play' to start the workout";
+    var full = [];
+    var upper = [];
+    var lower = [];
+    var core = [];
+    var plank = [];
+    var randomExercises = [];
+
+    if ('speechSynthesis' in window) {
         globalVars.utterance = new SpeechSynthesisUtterance();
         var voices = window.speechSynthesis.getVoices();
         globalVars.utterance.voice = voices[17];
         globalVars.utterance.rate = 1;
         globalVars.utterance.pitch = 1.23;
-        globalVars.utterance.text = text;
-        speechSynthesis.speak(globalVars.utterance);
-    }else{
+    } else {
         alert("Speech feature not supported. Please use the latest version of Google Chrome.");
     }
 
 
-    //Function Calls
+    /* Function Calls */
+
     //Program starts from setup(). Workout starts when 'Play' btn is clicked.
     setup();
     //attach event handlers to buttons
     attachEventHandlers();
 
-    //Function Definitions
+    /* Function Definitions */
+
     //Program starts from setup(). Workout starts when 'Play' btn is clicked.
     function setup() {
         //Load Exercises template
         $("#exTemplate").load("exercisesPartial.html");
         //Bring data from given source URL
         $.getJSON(globalVars.dataSrcUrl, {}).done(function(dataFromJsonFile) {
-            populateExercisesOnScreen(dataFromJsonFile);
+            populateExercisesOnScreen1(dataFromJsonFile);
         });
         //Remove :focus from clicked button
         $(".btn").mouseup(function() {
@@ -47,35 +53,86 @@ $(function(){
         $("#stopWorkout").click(stopBtnHandler);
     }
 
-    function populateExercisesOnScreen(dataFromJsonFile) {
-        var randExArr = prepArrayOfRandomEx(dataFromJsonFile);
+    function populateExercisesOnScreen1(dataFromJsonFile) {
+        var randExArr = prepArrayOfRandomEx1(dataFromJsonFile);
         $.each(randExArr, function(index, val) {
-            var cache = $('#exercise'+index+'Time');
-            $('#exercise'+index+'Time').parent().text((index) + ". " + val).append(cache);
+            index++;
+            var cache = $('#exercise' + index + 'Time');
+            $('#exercise' + index + 'Time').parent().text((index) + ". " + val.exName).append(cache);
+            $('#ex' + index + ' ' + 'img').attr('src', val.exInstructionsImgUrl);
         });
     }
 
-    function prepArrayOfRandomEx(dataFromJsonFile){
-        var exList = dataFromJsonFile,
-        exIndex = 1,
-        exArr = [];
-
-        for (var ex in exList) {
-            if (exList.hasOwnProperty(ex)) {
-                exArr[exIndex] = getRandomEx(ex, exList, exIndex);
-                exIndex++;
+    function prepArrayOfRandomEx1(dataFromJsonFile) {
+        dataFromJsonFile.exercises.forEach(function(obj, ind) {
+            switch (obj.exType) {
+                case "fullBody":
+                    full.push(obj);
+                    break;
+                case "upper":
+                    upper.push(obj);
+                    break;
+                case "lower":
+                    lower.push(obj);
+                    break;
+                case "core":
+                    core.push(obj);
+                    break;
+                case "plank":
+                    plank.push(obj);
+                    break;
+                default:
+                    console.log("NONE");
             }
-        }
-        return exArr;
+        });
+
+        return getRandomEx1();
     }
 
-    function getRandomEx(exName, exList, exIndex) {
-        var randomExNum = Math.floor(Math.random() * exList[exName].length);
-        return exList[exName][randomExNum];
+    function getRandomEx1() {
+        randomExercises.push(full[Math.floor(Math.random() * full.length)]);
+        randomExercises.push(upper[Math.floor(Math.random() * upper.length)]);
+        randomExercises.push(lower[Math.floor(Math.random() * lower.length)]);
+        randomExercises.push(core[Math.floor(Math.random() * core.length)]);
+        randomExercises.push(plank[Math.floor(Math.random() * plank.length)]);
+
+        randomExercises.forEach(function(obj) {
+            console.log(obj.exName);
+            console.log(obj.exType);
+            console.log(obj.exInstructionsImgUrl);
+        });
+
+        return randomExercises;
     }
+
+    // function populateExercisesOnScreen(dataFromJsonFile) {
+    //     var randExArr = prepArrayOfRandomEx(dataFromJsonFile);
+    //     $.each(randExArr, function(index, val) {
+    //         var cache = $('#exercise' + index + 'Time');
+    //         $('#exercise' + index + 'Time').parent().text((index) + ". " + val).append(cache);
+    //     });
+    // }
+
+    // function prepArrayOfRandomEx(dataFromJsonFile) {
+    //     var exList = dataFromJsonFile,
+    //         exIndex = 1,
+    //         exArr = [];
+
+    //     for (var ex in exList) {
+    //         if (exList.hasOwnProperty(ex)) {
+    //             exArr[exIndex] = getRandomEx(ex, exList, exIndex);
+    //             exIndex++;
+    //         }
+    //     }
+    //     return exArr;
+    // }
+
+    // function getRandomEx(exName, exList, exIndex) {
+    //     var randomExNum = Math.floor(Math.random() * exList[exName].length);
+    //     return exList[exName][randomExNum];
+    // }
 
     function startWorkout() {
-        //globalVars.audio.play();
         $('#fmw-timer').timer({
             countdown: true,
             duration: '5m',
@@ -88,64 +145,39 @@ $(function(){
 
     function startExercise(exCount) {
         var currExName = populateCurrentExercise(exCount);
-        // var utterance = new SpeechSynthesisUtterance();
-        // var voices = window.speechSynthesis.getVoices();
-        // console.log(window.speechSynthesis);
-        // $.each(voices, function(index, val) {
-        //     console.log(index + val);
-        // });
-        //window.speechSynthesis.speak(utterance);
-
-        // var voices = window.speechSynthesis.getVoices();
-        // var idx = 0;
-        // function playVoice() {
-        //     var say = 'Hi! My name is ' + voices[idx].name;
-        //     console.log('[' + idx + ']' + say);
-        //     var msg = new window.SpeechSynthesisUtterance(say);
-        //     msg.voice = voices[idx];
-        //     window.speechSynthesis.speak(msg);
-        //     var notFound = true;
-        //     idx++;
-        //     while ((notFound) && (idx < voices.length)) {
-        //         if (voices[idx].lang === 'en-US') {
-        //             setTimeout(function() { playVoice(); }, 2000);
-        //             notFound = false;
-        //         } else {
-        //             idx++;
-        //         }
-        //     }
-        // }
-        // playVoice();
-
         if (exCount <= 5) {
             globalVars.utterance.text = "Do the exercise, " + currExName;
-            setTimeout(function(){
+            setTimeout(function() {
                 speechSynthesis.speak(globalVars.utterance);
-            },1000);
+            }, 500);
             $('#exercise' + exCount + 'Time').timer({
                 duration: '1m',
                 format: '%M:%S',
                 callback: function() {
+                    audio.play();
                     console.log("exercise #" + exCount + " done!");
-                    globalVars.audio.play();
                     startExercise(++exCount);
                 }
             });
             animateProgressBar(exCount);
         } else {
-            globalVars.utterance.text = "Congratulations! Your workout is complete! YOU, Are, Awesome!";
-            speechSynthesis.speak(globalVars.utterance);
-            $('#fmw-timer').timer('remove');
-            $('#exercise').timer('remove');
-            $('#playWorkout').find('.material-icons').html("play_arrow");
-            $('#current-ex').prev().text('Awesome! The workout is complete.');
-            globalVars.observer.disconnect();
+            stopWorkoutCleanUp();
         }
     }
 
-    function populateCurrentExercise(exCount){
+    function stopWorkoutCleanUp() {
+        globalVars.utterance.text = "Congratulations! Your workout is complete! YOU, Are, Awesome!";
+        speechSynthesis.speak(globalVars.utterance);
+        $('#fmw-timer').timer('remove');
+        $('#exercise').timer('remove');
+        $('#playWorkout').find('.material-icons').html("play_arrow");
+        $('#current-ex').prev().text('Awesome! The workout is complete.');
+        globalVars.observer.disconnect();
+    }
+
+    function populateCurrentExercise(exCount) {
         var x = $('#exercise' + exCount + 'Time').parent().text();
-        var currExName = x.slice(2,x.indexOf('0'));
+        var currExName = x.slice(2, x.indexOf('0'));
         $('#current-ex').text(currExName);
         $('#current-ex').prev().text('Now');
         return currExName;
@@ -153,18 +185,26 @@ $(function(){
 
     function animateProgressBar(exCount) {
         var intervalCount = 1;
-
-        var pollInterval = setInterval(function(){
-            if(intervalCount<60 && $('#exercise' + exCount + 'Time').data('seconds') != null){
-                if($('#exercise' + exCount + 'Time').data('state') == 'paused'){
+        var finalCntDwn = 3;
+        var pollInterval = setInterval(function() {
+            if ($('#exercise' + exCount + 'Time').data('seconds') == 29) {
+                globalVars.utterance.text = "30 seconds to go!";
+                speechSynthesis.speak(globalVars.utterance);
+            } else if ($('#exercise' + exCount + 'Time').data('seconds') >= 57 && $('#exercise' + exCount + 'Time').data('seconds') < 60) {
+                globalVars.utterance.text = finalCntDwn;
+                speechSynthesis.speak(globalVars.utterance);
+                finalCntDwn--;
+            }
+            if (intervalCount < 60 && $('#exercise' + exCount + 'Time').data('seconds') != null) {
+                if ($('#exercise' + exCount + 'Time').data('state') == 'paused') {
                     return;
                 }
                 intervalCount++;
                 $('#exercise' + exCount).css('width', (intervalCount * 100 / 60) + '%');
-            }else{
+            } else {
                 clearInterval(pollInterval);
             }
-        },1000);
+        }, 1000);
 
         // Select the node that will be observed for mutations
         var targetNode = document.getElementById('exercise' + exCount + 'Time');
@@ -194,7 +234,7 @@ $(function(){
         if ($('#playWorkout').find('.material-icons').html() == "play_arrow") {
             if ($('#fmw-timer').data() && $('#fmw-timer').data('state') == 'paused') {
                 $('#fmw-timer').timer('resume');
-                pauseOrResumeExTimers('paused','resume');
+                pauseOrResumeExTimers('paused', 'resume');
             } else {
                 startWorkout();
             }
@@ -202,16 +242,16 @@ $(function(){
         } else {
             if ($('#fmw-timer').data() && $('#fmw-timer').data('state') == 'running') {
                 $('#fmw-timer').timer('pause');
-                pauseOrResumeExTimers('running','pause');
+                pauseOrResumeExTimers('running', 'pause');
             }
             $('#playWorkout').find('.material-icons').html("play_arrow");
         }
     }
 
-    function pauseOrResumeExTimers(state, action){
+    function pauseOrResumeExTimers(state, action) {
         //Pause/Resume exercise timers
         for (var i = 0; i <= 5; i++) {
-            if ($('#exercise' + i + 'Time').data() && $('#exercise' + i + 'Time').data('state')==state) {
+            if ($('#exercise' + i + 'Time').data() && $('#exercise' + i + 'Time').data('state') == state) {
                 $('#exercise' + i + 'Time').timer(action);
             }
         }
@@ -226,7 +266,7 @@ $(function(){
         for (var i = 0; i <= 5; i++) {
             $('#exercise' + i + 'Time').timer('reset');
             $('#exercise' + i + 'Time').timer('remove');
-            $('#exercise' + i).css('width','0%');
+            $('#exercise' + i).css('width', '0%');
         }
         globalVars.observer.disconnect();
         $('#playWorkout').find('.material-icons').html("play_arrow");
