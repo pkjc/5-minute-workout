@@ -96,41 +96,8 @@ $(function() {
         randomExercises.push(core[Math.floor(Math.random() * core.length)]);
         randomExercises.push(plank[Math.floor(Math.random() * plank.length)]);
 
-        randomExercises.forEach(function(obj) {
-            console.log(obj.exName);
-            console.log(obj.exType);
-            console.log(obj.exInstructionsImgUrl);
-        });
-
         return randomExercises;
     }
-
-    // function populateExercisesOnScreen(dataFromJsonFile) {
-    //     var randExArr = prepArrayOfRandomEx(dataFromJsonFile);
-    //     $.each(randExArr, function(index, val) {
-    //         var cache = $('#exercise' + index + 'Time');
-    //         $('#exercise' + index + 'Time').parent().text((index) + ". " + val).append(cache);
-    //     });
-    // }
-
-    // function prepArrayOfRandomEx(dataFromJsonFile) {
-    //     var exList = dataFromJsonFile,
-    //         exIndex = 1,
-    //         exArr = [];
-
-    //     for (var ex in exList) {
-    //         if (exList.hasOwnProperty(ex)) {
-    //             exArr[exIndex] = getRandomEx(ex, exList, exIndex);
-    //             exIndex++;
-    //         }
-    //     }
-    //     return exArr;
-    // }
-
-    // function getRandomEx(exName, exList, exIndex) {
-    //     var randomExNum = Math.floor(Math.random() * exList[exName].length);
-    //     return exList[exName][randomExNum];
-    // }
 
     function startWorkout() {
         $('#fmw-timer').timer({
@@ -145,6 +112,8 @@ $(function() {
 
     function startExercise(exCount) {
         var currExName = populateCurrentExercise(exCount);
+        $('#ex' + (exCount - 1)).closest('.collapse').collapse('toggle');
+        $('#ex' + exCount).closest('.collapse').collapse();
         if (exCount <= 5) {
             globalVars.utterance.text = "Do the exercise, " + currExName;
             setTimeout(function() {
