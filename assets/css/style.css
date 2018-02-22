@@ -2,6 +2,26 @@
     font-size: 1rem
 }
 
+.modal-dialog .modal-body {
+    padding: 18px 28px 18px;
+}
+
+.modal-body ul {
+    margin: 0;
+    margin-left: 16px;
+    padding: 0;
+    list-style-type: circle;
+}
+
+.modal-body ul li {
+    margin-bottom: 10px;
+}
+
+.modal-dialog .modal-header {
+    border-bottom: none;
+    padding: 16px 28px 0px;
+}
+
 html,
 body {
     margin: 0;

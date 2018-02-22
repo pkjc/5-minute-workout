@@ -235,4 +235,6 @@ $(function() {
         globalVars.observer.disconnect();
         $('#playWorkout').find('.material-icons').html("play_arrow");
     }
+
+    $('#infoModal').modal('show');
 });
