@@ -2,147 +2,147 @@
     "exercises": [{
             "exName": "Straight arm plank",
             "exType": "plank",
-            "exInstructionsImgUrl": "https://greatist.com/sites/default/files/styles/article_main/public/Plank-1.png"
+            "exInstructionsImgUrl": "Images/exercises/straight-plank.png"
         },
         {
             "exName": "Regular plank",
             "exType": "plank",
-            "exInstructionsImgUrl": "http://images.indianexpress.com/2017/04/plank.jpg"
+            "exInstructionsImgUrl": "Images/exercises/regular-plank.jpg"
         },
         {
             "exName": "Spiderman plank",
             "exType": "plank",
-            "exInstructionsImgUrl": "https://thumbs.gfycat.com/SociableAthleticIbex-max-1mb.gif"
+            "exInstructionsImgUrl": "Images/exercises/spiderman-plank.gif"
         },
         {
             "exName": "V-up hold",
             "exType": "plank",
-            "exInstructionsImgUrl": "http://www.md-health.com/images/10416579/lower-ab-workouts-for-men-01.jpg"
+            "exInstructionsImgUrl": "Images/exercises/v-up-hold.jpg"
         },
         {
             "exName": "Bridge hold",
             "exType": "plank",
-            "exInstructionsImgUrl": "https://s-media-cache-ak0.pinimg.com/originals/50/17/1f/50171fa55b8347426054be4dde82c915.jpg"
+            "exInstructionsImgUrl": "Images/exercises/bridge-hold.jpg"
         },
         {
             "exName": "Crunches",
             "exType": "core",
-            "exInstructionsImgUrl": "http://s3.amazonaws.com/photography.prod.demandstudios.com/70336648-ec88-4189-b486-2c955d50224f.gif"
+            "exInstructionsImgUrl": "Images/exercises/crunches.gif"
         },
         {
             "exName": "Reverse crunches",
             "exType": "core",
-            "exInstructionsImgUrl": "https://img.aws.livestrongcdn.com/ls-slideshow-main-image/cme/photography.prod.demandstudios.com/b6e78136-8792-4288-b0a9-350f94adfe12.gif"
+            "exInstructionsImgUrl": "Images/exercise/reverse-crunches.gif"
         },
         {
             "exName": "Bicycles",
             "exType": "core",
-            "exInstructionsImgUrl": "https://img.aws.livestrongcdn.com/ls-slideshow-main-image/cme/photography.prod.demandstudios.com/9129a042-175d-4c8a-8c69-ea38fe26924a.gif"
+            "exInstructionsImgUrl": "Images/exercises/bicycles.gif"
         },
         {
             "exName": "V-ups",
             "exType": "core",
-            "exInstructionsImgUrl": "https://img.aws.livestrongcdn.com/ls-slideshow-main-image/cme/photography.prod.demandstudios.com/582765cd-fd20-408c-aec3-8187f3848a2a.gif"
+            "exInstructionsImgUrl": "Images/exercises/v-ups.gif"
         },
         {
             "exName": "Russian twists",
             "exType": "core",
-            "exInstructionsImgUrl": "https://d3hj9cj96qnces.cloudfront.net/wp-content/uploads/2015/07/25_M_WIP02.gif"
+            "exInstructionsImgUrl": "Images/exercises/russian-twists.gif"
         },
         {
             "exName": "Sit ups",
             "exType": "core",
-            "exInstructionsImgUrl": "https://img.aws.livestrongcdn.com/ls-slideshow-main-image/cme/photography.prod.demandstudios.com/1d878326-f44c-469a-979b-7669ee1b57d1.gif"
+            "exInstructionsImgUrl": "Images/exercises/sit-ups.gif"
         },
         {
             "exName": "Squats",
             "exType": "lower",
-            "exInstructionsImgUrl": "http://img.aws.livestrongcdn.com/ls-slideshow-main-image/cme/photography.prod.demandstudios.com/d9db5429-96f5-41ab-876c-c01739f4dd5a.gif"
+            "exInstructionsImgUrl": "Images/exercises/squats.gif"
         },
         {
             "exName": "Lunges",
             "exType": "lower",
-            "exInstructionsImgUrl": "https://greatist.com/sites/default/files/styles/article_main/public/PERFECT-SERIES_LUNGE-HORIZONTAL_GRAIN.gif"
+            "exInstructionsImgUrl": "Images/exercises/lunges.gif"
         },
         {
             "exName": "Step up on chair",
             "exType": "lower",
-            "exInstructionsImgUrl": "https://big.assets.huffingtonpost.com/sarahlegrear7.gif"
+            "exInstructionsImgUrl": "Images/exercises/step-up-on-chair.gif"
         },
         {
             "exName": "Bridge up",
             "exType": "lower",
-            "exInstructionsImgUrl": "https://img.aws.livestrongcdn.com/ls-slideshow-main-image/cme/photography.prod.demandstudios.com/a562d6f5-888c-4b4a-a274-f969c3a8557d.gif"
+            "exInstructionsImgUrl": "Images/exercises/bridge-ups.gif"
         },
         {
             "exName": "Side lunges",
             "exType": "lower",
-            "exInstructionsImgUrl": "https://lh5.googleusercontent.com/epKMFdCp0kB2OqdeCBYJ7jS9mKat4L0cC2YW8ScFqF6EKn28xQuRbUA831ZVCitGd5nDzkIB2b4gRsCeA0Xkeg0HSKALzWRGSh8404RhQR0iJFyI8EPvP9MYOP19nqWrjkZhLpyj"
+            "exInstructionsImgUrl": "Images/exercises/side-lunges.gif"
         },
         {
             "exName": "Wall sit",
             "exType": "lower",
-            "exInstructionsImgUrl": "http://draustincohen.com/wp-content/uploads/2014/08/wall-sit.jpg"
+            "exInstructionsImgUrl": "Images/exercises/wall-sit.jpg"
         },
         {
             "exName": "Pushups",
             "exType": "upper",
-            "exInstructionsImgUrl": "https://d39ziaow49lrgk.cloudfront.net/wp-content/uploads/2015/07/Push_Up_3.gif"
+            "exInstructionsImgUrl": "Images/exercises/pushups.gif"
         },
         {
             "exName": "Wide pushups",
             "exType": "upper",
-            "exInstructionsImgUrl": "http://dontchangemuch.ca/wp-content/uploads/2015/08/wide-push-up1.gif"
+            "exInstructionsImgUrl": "Images/exercises/wide-pushups.gif"
         },
         {
             "exName": "Tricep dips",
             "exType": "upper",
-            "exInstructionsImgUrl": "https://media.giphy.com/media/2Pe1lncCX6l5S/giphy.gif"
+            "exInstructionsImgUrl": "Images/exercises/tricep-dips.gif"
         },
         {
             "exName": "Bird dog",
             "exType": "upper",
-            "exInstructionsImgUrl": "https://i0.wp.com/img.aws.livestrongcdn.com/ls-slideshow-main-image/cme/photography.prod.demandstudios.com/2a73eaf5-631e-473c-918f-a03fd145521a.gif"
+            "exInstructionsImgUrl": "Images/exercises/bird-dog.gif"
         },
         {
             "exName": "Knee pushups",
             "exType": "upper",
-            "exInstructionsImgUrl": "https://d39ziaow49lrgk.cloudfront.net/wp-content/uploads/2016/03/Knee_Push_Up.gif"
+            "exInstructionsImgUrl": "Images/exercises/knee-pushups.gif"
         },
         {
             "exName": "Bear crawl",
             "exType": "upper",
-            "exInstructionsImgUrl": "https://d24bnpykhxwj9p.cloudfront.net/s3file/s3fs-public/users1/2018-01/Wed/Bear%20Crawl.gif"
+            "exInstructionsImgUrl": "Images/exercises/bear-crawl.gif"
         },
         {
             "exName": "Jumping jacks",
             "exType": "fullBody",
-            "exInstructionsImgUrl": "https://d39ziaow49lrgk.cloudfront.net/wp-content/uploads/2016/03/Jumping-Jacks.gif"
+            "exInstructionsImgUrl": "Images/exercises/jumping-jacks.gif"
         },
         {
             "exName": "Mountain climbers",
             "exType": "fullBody",
-            "exInstructionsImgUrl": "https://i0.wp.com/timeshood.com/wp-content/uploads/2017/10/gallery-1462807352-mountain-climbers-1.gif"
+            "exInstructionsImgUrl": "Images/exercises/mountain-climbers.gif"
         },
         {
             "exName": "High knees running",
             "exType": "fullBody",
-            "exInstructionsImgUrl": "https://d39ziaow49lrgk.cloudfront.net/wp-content/uploads/2016/03/High-Knees.gif"
+            "exInstructionsImgUrl": "Images/exercises/high-knees.gif"
         },
         {
             "exName": "Sun salutations",
             "exType": "fullBody",
-            "exInstructionsImgUrl": "http://urbanyogi.ph/wp-content/uploads/2016/03/Ktf1nq.gif"
+            "exInstructionsImgUrl": "Images/exercises/sun-salutations.gif"
         },
         {
             "exName": "Spot jogging",
             "exType": "fullBody",
-            "exInstructionsImgUrl": "http://s3.amazonaws.com/photography.prod.demandstudios.com/a780370c-9564-4a6f-90ab-ab7dae6591ce.gif"
+            "exInstructionsImgUrl": "Images/exercises/spot-jogging.gif"
         },
         {
             "exName": "Arms rotation",
             "exType": "fullBody",
-            "exInstructionsImgUrl": "https://img.buzzfeed.com/buzzfeed-static/static/2016-05/23/15/enhanced/buzzfeed-prod-fastlane03/anigif_enhanced-15834-1464030478-2.gif"
+            "exInstructionsImgUrl": "Images/exercises/arms-rotations.gif"
         }
     ]
 }

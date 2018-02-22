@@ -26,15 +26,10 @@ $(function() {
 
 
     /* Function Calls */
-
-    //Program starts from setup(). Workout starts when 'Play' btn is clicked.
     setup();
-    //attach event handlers to buttons
     attachEventHandlers();
 
     /* Function Definitions */
-
-    //Program starts from setup(). Workout starts when 'Play' btn is clicked.
     function setup() {
         //Load Exercises template
         $("#exTemplate").load("exercisesPartial.html");
@@ -112,7 +107,7 @@ $(function() {
 
     function startExercise(exCount) {
         var currExName = populateCurrentExercise(exCount);
-        $('#ex' + (exCount - 1)).closest('.collapse').collapse('toggle');
+        $('#ex' + (exCount - 1)).closest('.collapse').collapse('hide');
         $('#ex' + exCount).closest('.collapse').collapse();
         if (exCount <= 5) {
             globalVars.utterance.text = "Do the exercise, " + currExName;
