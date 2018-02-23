@@ -13,6 +13,20 @@
     list-style-type: circle;
 }
 
+.list-group-item::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: -.5em;
+    vertical-align: 0.55em;
+    content: "";
+    border-top: .45em solid;
+    border-right: .35em solid transparent;
+    border-bottom: 0;
+    border-left: .35em solid transparent;
+    color: #777;
+}
+
 .modal-body ul li {
     margin-bottom: 10px;
 }

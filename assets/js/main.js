@@ -1,4 +1,6 @@
 $(function() {
+    $('#infoModal').modal('show');
+
     var audio = new Audio('./assets/audio/done.mp3');
     //Global object to create variables available only throughout the code but not globally
     const globalVars = {
@@ -18,8 +20,9 @@ $(function() {
         globalVars.utterance = new SpeechSynthesisUtterance();
         var voices = window.speechSynthesis.getVoices();
         globalVars.utterance.voice = voices[17];
+        globalVars.utterance.lang = 'en-US';
         globalVars.utterance.rate = 1;
-        globalVars.utterance.pitch = 1.23;
+        globalVars.utterance.pitch = 1.25;
     } else {
         alert("Speech feature not supported. Please use the latest version of Google Chrome.");
     }
@@ -107,8 +110,7 @@ $(function() {
 
     function startExercise(exCount) {
         var currExName = populateCurrentExercise(exCount);
-        $('#ex' + (exCount - 1)).closest('.collapse').collapse('hide');
-        $('#ex' + exCount).closest('.collapse').collapse();
+
         if (exCount <= 5) {
             globalVars.utterance.text = "Do the exercise, " + currExName;
             setTimeout(function() {
@@ -222,8 +224,6 @@ $(function() {
     }
 
     function stopBtnHandler() {
-        //$("#fmw-timer").timer('reset');
-        //Stop the workout timer
         $("#fmw-timer").timer('reset');
         $("#fmw-timer").timer('remove');
         //Stop exercise timers
@@ -236,5 +236,4 @@ $(function() {
         $('#playWorkout').find('.material-icons').html("play_arrow");
     }
 
-    $('#infoModal').modal('show');
 });
